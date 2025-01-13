@@ -27,7 +27,7 @@ Site Principal para Automação:
  * https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
 
 
-## Apresentação
+## 📊 Apresentação
 > O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades, também foi de pensar em alguns pontos como:
 - Programação de horários diferentes para a execução de cada processo no orchestrator;
 - Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã, por ser um processo de download de dados e alguns horários podem ter menos instabilidades;
@@ -78,7 +78,7 @@ Pasta com os arquivos baixados:
 > ![PastaRedeArquivosBaixados](https://github.com/user-attachments/assets/2f7f8b70-3b07-4cea-b528-a2f160617485)
 
 
-## Pontos de melhorias para ajustes futuros:
+## 🔧 Pontos de melhorias para ajustes futuros:
 > * Melhorar a lógica do Performer para execução em modo Paralelo do download de dados;
 > * Utilizar as credenciais e dados de e-mail e site em Assets no Orchestrator;
 > * Refinar a lógica do Dispatcher para validação de arquivos que não foram atualizados no site e não precisam de downloads.
