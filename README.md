@@ -21,8 +21,11 @@ Arquivos com nome da Fila do Orchestrator (Fila_prjDownloadDadosCNPJGovernoFeder
   - prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx.
 
 Plataforma de E-mail utilizada:
- * https://ethereal.email/ (credenciais do e-mail "prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx" e "prj_DispatcherDownloadDadosCNPJGovernoFederal\credentials.csv");
- * Site Principal para Automação: https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
+ * https://ethereal.email/
+ * Credenciais do e-mail "prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx" e "prj_DispatcherDownloadDadosCNPJGovernoFederal\credentials.csv";
+
+Site Principal para Automação
+ * https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
 
 
 ## Apresentação
