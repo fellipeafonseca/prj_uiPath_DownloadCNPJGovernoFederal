@@ -7,7 +7,7 @@
 prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo):
  - UiPath.System.Activities: v23.10.6;
  - UiPath.Mail.Activities: v1.23.11;
- - UiPath.UIAutomations.Activities: v24.10.10 ( Tive Problemas em utilizar a Extração de Tabela em versões menores, por isso foi necessário o update ).
+ - UiPath.UIAutomations.Activities: v24.10.10 ( Tive Problemas em utilizar a atividade de "Extração de Tabela" em versões menores que essa, por isso, foi necessário o update ).
   
 prj_PerformerDownloadCNPJGovernoFederal (Robotic Enterprise Framework):
  - UiPath.System.Activities: v23.10.6;
