@@ -32,8 +32,8 @@ Site Principal para Automação:
 
 O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades, também foi de pensar em alguns pontos como:
 - Programação de horários diferentes para a execução de cada processo no orchestrator;
-- Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã processo de download de dados no site;
-- Programar para execucar o processo do Performer após algum item ser adicionado na Fila.
+- Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã, por ser um processo de download de dados e alguns horários podem ter menos instabilidades;
+- Programar para executar o processo do Performer após algum item ser adicionado na Fila.
 
 
 ## prj_DispatcherDownloadDadosCNPJGovernoFederal
