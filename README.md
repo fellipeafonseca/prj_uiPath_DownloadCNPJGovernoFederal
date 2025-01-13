@@ -5,18 +5,18 @@
 * Software Desenvolvido em UiPath Studio Community 2025.0.157
 
 prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo)
-        - UiPath.System.Activities: v23.10.6
-        - UiPath.Mail.Activities: v1.23.11
-        - UiPath.UIAutomations.Activities: v24.10.10 (Tive Problemas em utilizar a Extração de Tabela em versões menores, por isso foi necessário o update)
+ - UiPath.System.Activities: v23.10.6
+ - UiPath.Mail.Activities: v1.23.11
+ - UiPath.UIAutomations.Activities: v24.10.10 (Tive Problemas em utilizar a Extração de Tabela em versões menores, por isso foi necessário o update)
   
 prj_PerformerDownloadCNPJGovernoFederal (Robotic Enterprise Framework)
-        - UiPath.System.Activities: v23.10.6
-        - UiPath.Mail.Activities: v1.23.11
-        - UiPath.Excel.Activities: v2.24.4
-        - UiPath.Testing.Activities: v24.10.3
-        - UiPath.UIAutomations.Activities: v23.10.13
+ - UiPath.System.Activities: v23.10.6
+ - UiPath.Mail.Activities: v1.23.11
+ - UiPath.Excel.Activities: v2.24.4
+ - UiPath.Testing.Activities: v24.10.3
+ - UiPath.UIAutomations.Activities: v23.10.13
 
-Arquivos com Nome da Fila Orchestrator "Fila_prjDownloadDadosCNPJGovernoFederal" :
+Arquivos com Nome da Fila Orchestrator "Fila_prjDownloadDadosCNPJGovernoFederal"
   - prj_DispatcherDownloadDadosCNPJGovernoFederal\FilaOrchestrator.csv
   - prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx
 
