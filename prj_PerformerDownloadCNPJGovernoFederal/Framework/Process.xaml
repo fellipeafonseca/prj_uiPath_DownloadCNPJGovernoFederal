@@ -126,7 +126,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="724,1406" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="689,859" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="varBo" />
       <Variable x:TypeArguments="x:Boolean" Name="var_boolArquivoExiste" />
@@ -140,35 +140,38 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap2010:Annotation.AnnotationText="1 - Download do arquivo vindo da Fila&#xA;2- Verificação de Regra de negócio se Item é zip para descompactar&#xD;&#xA;   -  Remover os itens baixados (zip)" DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="724,160" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process">
+    <ui:Comment sap2010:Annotation.AnnotationText="1 - Download do arquivo vindo da Fila&#xA;2- Verificação de Regra de negócio se Item é zip para descompactar&#xA;   -  Remover os itens baixados (zip)" DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Comment>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="724,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Started Process&quot;]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Processando Item: &quot; +in_TransactionItem.SpecificContent(&quot;url&quot;).ToString]" />
-    <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Realizar o Download do Arquivo" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;nome&quot;).ToString]" sap:VirtualizedContainerService.HintSize="724,153" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="[in_TransactionItem.SpecificContent(&quot;url&quot;).ToString]">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Started Process&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Baixando Item: &quot; +in_TransactionItem.SpecificContent(&quot;url&quot;).ToString]" />
+    <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Realizar o Download do Arquivo" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()+&quot;\&quot;+in_TransactionItem.SpecificContent(&quot;nome&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,153" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="[in_TransactionItem.SpecificContent(&quot;url&quot;).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uasf:DownloadFileFromUrl>
-    <ui:IfElseIf sap2010:Annotation.AnnotationText="Verificando se a extensão do Arquivo é ZIP para realizar fazer a descompactação" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="724,652" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+    <ui:IfElseIf sap2010:Annotation.AnnotationText="Verificando se a extensão do Arquivo é ZIP para realizar fazer a descompactação" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="416,105" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
       <ui:IfElseIf.ConditionBlocks>
         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
           <ui:IfElseIfBlock BlockType="If" Condition="[in_TransactionItem.SpecificContent(&quot;extensaoArquivo&quot;).Equals(&quot;zip&quot;)]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="673,402" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="843,748" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uascw:ExtractFiles Content="{x:Null}" DestinationFolderInfo="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="True" FileToExtract="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()+&quot;\&quot;+ &#xD;&#xA;in_TransactionItem.SpecificContent(&quot;nome&quot;).ToString+&quot;.&quot;+&#xD;&#xA;in_TransactionItem.SpecificContent(&quot;extensaoArquivo&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,239" sap2010:WorkflowViewState.IdRef="ExtractFiles_2" SkipUnsupportedFiles="False" />
-                <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()+&quot;\&quot;+ &#xD;&#xA;in_TransactionItem.SpecificContent(&quot;nome&quot;).ToString+&quot;.&quot;+&#xD;&#xA;in_TransactionItem.SpecificContent(&quot;extensaoArquivo&quot;).ToString]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Descompactando Arquivo...&quot;]" />
+                <uascw:ExtractFiles Content="{x:Null}" DestinationFolderInfo="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()]" DisplayName="Extract/Unzip Files" ExtractToADedicatedFolder="True" FileToExtract="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()+&quot;\&quot;+ &#xA;in_TransactionItem.SpecificContent(&quot;nome&quot;).ToString+&quot;.&quot;+&#xA;in_TransactionItem.SpecificContent(&quot;extensaoArquivo&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,239" sap2010:WorkflowViewState.IdRef="ExtractFiles_2" SkipUnsupportedFiles="False" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Excluindo Arquivo .zip&quot;]" />
+                <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_Config(&quot;caminhoSalvarArquivos&quot;).ToString()+&quot;\&quot;+ &#xA;in_TransactionItem.SpecificContent(&quot;nome&quot;).ToString+&quot;.&quot;+&#xA;in_TransactionItem.SpecificContent(&quot;extensaoArquivo&quot;).ToString]" />
               </Sequence>
             </ui:IfElseIfBlock.Then>
           </ui:IfElseIfBlock>
@@ -176,7 +179,7 @@
       </ui:IfElseIf.ConditionBlocks>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>

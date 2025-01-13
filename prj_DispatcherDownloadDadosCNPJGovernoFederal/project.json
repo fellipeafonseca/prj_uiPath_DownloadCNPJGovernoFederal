@@ -4,6 +4,7 @@
   "description": "Consulta e download de dados de CNPJ no site do Governo Federal.",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.Mail.Activities": "[1.23.11]",
     "UiPath.System.Activities": "[23.10.6]",
     "UiPath.UIAutomation.Activities": "[24.10.10]"
