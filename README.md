@@ -5,29 +5,29 @@
 * Software Desenvolvido em UiPath Studio Community 2025.0.157
 
 prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo):
- - UiPath.System.Activities: v23.10.6
- - UiPath.Mail.Activities: v1.23.11
- - UiPath.UIAutomations.Activities: v24.10.10 (Tive Problemas em utilizar a Extração de Tabela em versões menores, por isso foi necessário o update)
+ - UiPath.System.Activities: v23.10.6;
+ - UiPath.Mail.Activities: v1.23.11;
+ - UiPath.UIAutomations.Activities: v24.10.10 ( Tive Problemas em utilizar a Extração de Tabela em versões menores, por isso foi necessário o update ).
   
 prj_PerformerDownloadCNPJGovernoFederal (Robotic Enterprise Framework):
- - UiPath.System.Activities: v23.10.6
- - UiPath.Mail.Activities: v1.23.11
- - UiPath.Excel.Activities: v2.24.4
- - UiPath.Testing.Activities: v24.10.3
- - UiPath.UIAutomations.Activities: v23.10.13
+ - UiPath.System.Activities: v23.10.6;
+ - UiPath.Mail.Activities: v1.23.11;
+ - UiPath.Excel.Activities: v2.24.4;
+ - UiPath.Testing.Activities: v24.10.3;
+ - UiPath.UIAutomations.Activities: v23.10.13.
 
 Arquivos com nome da Fila do Orchestrator (Fila_prjDownloadDadosCNPJGovernoFederal):
-  - prj_DispatcherDownloadDadosCNPJGovernoFederal\FilaOrchestrator.csv
-  - prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx
+  - prj_DispatcherDownloadDadosCNPJGovernoFederal\FilaOrchestrator.csv;
+  - prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx.
 
 Plataforma de E-mail utilizada:
- * https://ethereal.email/ (credenciais: 
+ * https://ethereal.email/ (credenciais do e-mail "prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx" e "prj_DispatcherDownloadDadosCNPJGovernoFederal\credentials.csv");
  * Site Principal para Automação: https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj
 
 
 ## Apresentação
 
-O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades também foi de pensar em alguns pontos como:
+O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades, também foi de pensar em alguns pontos como:
 - Programação de horários diferentes para a execução de cada processo no orchestrator;
 - Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã processo de download de dados no site;
 - Programar para execucar o processo do Performer após algum item ser adicionado na Fila.
