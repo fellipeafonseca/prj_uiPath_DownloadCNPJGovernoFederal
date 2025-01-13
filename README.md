@@ -4,19 +4,19 @@
 
 * Software Desenvolvido em UiPath Studio Community 2025.0.157
 
-prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo)
+prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo):
  - UiPath.System.Activities: v23.10.6
  - UiPath.Mail.Activities: v1.23.11
  - UiPath.UIAutomations.Activities: v24.10.10 (Tive Problemas em utilizar a Extração de Tabela em versões menores, por isso foi necessário o update)
   
-prj_PerformerDownloadCNPJGovernoFederal (Robotic Enterprise Framework)
+prj_PerformerDownloadCNPJGovernoFederal (Robotic Enterprise Framework):
  - UiPath.System.Activities: v23.10.6
  - UiPath.Mail.Activities: v1.23.11
  - UiPath.Excel.Activities: v2.24.4
  - UiPath.Testing.Activities: v24.10.3
  - UiPath.UIAutomations.Activities: v23.10.13
 
-Arquivos com Nome da Fila Orchestrator "Fila_prjDownloadDadosCNPJGovernoFederal"
+Arquivos com Nome da Fila Orchestrator "Fila_prjDownloadDadosCNPJGovernoFederal":
   - prj_DispatcherDownloadDadosCNPJGovernoFederal\FilaOrchestrator.csv
   - prj_PerformerDownloadCNPJGovernoFederal\Data\Config.xlsx
 
@@ -28,12 +28,14 @@ Plataforma de E-mail utilizada:
 ## Apresentação
 
 O Processo foi dividido em 2 projetos, no Modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades também foi de pensar em alguns pontos como:
+- Programação de horários diferentes para a execução de cada processo no orchestrator;
+- Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã processo de download de dados no site;
+- Programar para execucar o processo do Performer após algum item ser adicionado na Fila.
 
- * Programação de horários diferentes para a execução de cada processo. Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhão processo de download de dados no site. 
 
+prj_DispatcherDownloadDadosCNPJGovernoFederal
 
-prj_DispatcherDownloadDadosCNPJGovernoFederal:
-O processo é feito apartir do acesso ao site coletando os Dados necessários para Prenchimento da Fila. A Fila é preenchida com os nomes, links e datas de atualização de cada arquivo. Há uma regra de negócio validando o prenchimento da fila, caso exista o mesmo item na fila marcado como "New" ou "Sucesso" é verificado a Data de Atualização desse arquivo novo que acabou de ser buscado no site. Caso o dado que acabou de ser buscado no site sejá diferente do último mesmo item já presente na fila esse dado não é adicionado para a Fila de Processamento.
+> O processo é feito apartir do acesso ao site coletando os Dados necessários para Prenchimento da Fila. A Fila é preenchida com os nomes, links e datas de atualização de cada arquivo. Há uma regra de negócio validando o prenchimento da fila, caso exista o mesmo item na fila marcado como "New" ou "Sucesso" é verificado a Data de Atualização desse arquivo novo que acabou de ser buscado no site. Caso o dado que acabou de ser buscado no site sejá diferente do último mesmo item já presente na fila esse dado não é adicionado para a Fila de Processamento.
 Caso nenhum Item seja adicionado (ou seja a data de atualização tenha sido alterada) é enviado um E-mail informando que "Não Há arquivos novos disponíveis". 
 
 Componentes utilizados:
