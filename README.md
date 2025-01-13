@@ -1,8 +1,7 @@
 # prj_uiPath_DownloadCNPJGovernoFederal
 
 ## 💻 Pré-requisitos
-
-* Software Desenvolvido em UiPath Studio Community 2025.0.157
+> Software Desenvolvido em UiPath Studio Community 2025.0.157
 
 prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo):
  - UiPath.System.Activities: v23.10.6;
@@ -29,8 +28,7 @@ Site Principal para Automação:
 
 
 ## Apresentação
-
-O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades, também foi de pensar em alguns pontos como:
+> O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades, também foi de pensar em alguns pontos como:
 - Programação de horários diferentes para a execução de cada processo no orchestrator;
 - Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã, por ser um processo de download de dados e alguns horários podem ter menos instabilidades;
 - Programar para executar o processo do Performer após algum item ser adicionado na Fila.
@@ -58,7 +56,7 @@ Caso nenhum Item seja adicionado na Fila o E-mail é enviado:
 
 
 ## prj_DispatcherDownloadDadosCNPJGovernoFederal:
-> O Processo é feito através do processamento de itens da Fila. As Urls com os links para downloads são feitos e também é verificado se o item é do "zip", caso seja, o arquivo é descompactado e excluído o arquivo o ".zip".
+> O Processo é feito através do processamento de itens da Fila. As Urls com os links para downloads são feitos e também é verificado se o item é do "zip", caso seja, o arquivo é descompactado e excluído o arquivo ".zip".
 
 Componentes utilizados:
 - Download File From URL (Busca diretamente através da URL, atividade fica aguardando até o download ser concluído);
@@ -66,7 +64,7 @@ Componentes utilizados:
 - Delete File;
 - Envio de E-mail (End Process).
 
-Execução Processo prj_PerformerDownloadCNPJGovernoFederal
+Execução do Processo prj_PerformerDownloadCNPJGovernoFederal
 
 https://github.com/user-attachments/assets/b2787130-9ebf-408b-bb49-1277b51583a0
 
