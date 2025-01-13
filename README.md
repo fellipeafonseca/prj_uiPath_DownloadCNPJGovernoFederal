@@ -6,7 +6,7 @@
 prj_DispatcherDownloadDadosCNPJGovernoFederal (Processo):
  - UiPath.System.Activities: v23.10.6;
  - UiPath.Mail.Activities: v1.23.11;
- - UiPath.UIAutomations.Activities: v24.10.10 ( Tive Problemas em utilizar a atividade de "Extração de Tabela" em versões menores que essa, por isso, foi necessário o update ).
+ - UiPath.UIAutomations.Activities: v24.10.10 ( Tive problemas em utilizar a atividade de "Extração de Tabela" em versões menores que essa, por isso, foi necessário o update ).
   
 prj_PerformerDownloadCNPJGovernoFederal (Robotic Enterprise Framework):
  - UiPath.System.Activities: v23.10.6;
@@ -30,13 +30,13 @@ Site Principal para Automação:
 ## 📊 Apresentação
 > O Processo foi dividido em 2 projetos, no modelo Dispatcher e Permorfer. A ideia além de separar as responsabilidades, também foi de pensar em alguns pontos como:
 - Programação de horários diferentes para a execução de cada processo no orchestrator;
-- Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer executar às 02h00 da manhã, por ser um processo de download de dados e alguns horários podem ter menos instabilidades;
+- Exemplo, verificar se o site atualizou as informações, programar para executar o processo do dispatcher às 17h00 horas. Porém o Permorfer para executar às 02h00 da manhã, por ser um processo de download de dados e alguns horários podem ter menos instabilidades;
 - Programar para executar o processo do Performer após algum item ser adicionado na Fila.
 
 
 ## prj_DispatcherDownloadDadosCNPJGovernoFederal
 
-> O processo é feito a partir do acesso ao site coletando os dados necessários para prenchimento da Fila. A Fila é preenchida com os nomes, links e datas de atualização de cada arquivo. Há uma regra de negócio validando o prenchimento da fila, caso exista o mesmo item na fila marcado como "New" ou "Sucesso" é verificado a "Data de Atualização" desse arquivo novo que acabou de ser buscado no site. Caso o dado que acabou de ser buscado no site a data de utilização seja diferente do item que está na fila, esse dado foi atualizado no site e por isso precisa ser adicionado na Fila de processamento ( Foi feito essa lógica de validação, pois verificar a última data de modificação do arquivo na pasta da rede, poderia apresentar falhas na lógica pois o usuário poderia alterar a pasta, adiconando dados e alterando os itens. E como os arquivos "zip" são excluídos não seria possível verificar a hora exata do download daquele arquivo ).
+> O processo é feito a partir do acesso ao site coletando os dados necessários para preenchimento da Fila. A Fila é preenchida com os nomes, links e datas de atualização de cada arquivo. Há uma regra de negócio validando o preenchimento da fila, caso exista o mesmo item na fila marcado como "New" ou "Sucesso" é verificada a "Data de Atualização" desse arquivo novo que acabou de ser buscado no site. Caso o dado que acabou de ser buscado no site a data de utilização seja diferente do item que está na fila, esse dado foi atualizado no site e por isso precisa ser adicionado na Fila de processamento ( Foi feita essa lógica de validação, pois verificar a última data de modificação do arquivo na pasta da rede, poderia apresentar falhas na lógica pois o usuário poderia alterar a pasta, adicionando dados e alterando os itens. E como os arquivos "zip" são excluídos, não seria possível verificar a hora exata do download daquele arquivo ).
 Caso nenhum Item seja adicionado (ou seja, a data de atualização tenha sido alterada) é enviado um E-mail informando que "Não Há arquivos novos disponíveis". 
 
 Componentes utilizados:
@@ -79,8 +79,8 @@ Pasta com os arquivos baixados:
 
 
 ## 🔧 Pontos de melhorias para ajustes futuros:
-> * Melhorar a lógica do Performer para execução em modo Paralelo do download de dados;
-> * Utilizar as credenciais e dados de e-mail e site em Assets no Orchestrator;
+> * Melhorar a lógica do Performer para execução em modo Paralelo do download das urls dos arquivos;
+> * Utilizar as credenciais e dados de e-mail e site em Assets no Orchestrator (Segurança da Informação);
 > * Refinar a lógica do Dispatcher para validação de arquivos que não foram atualizados no site e não precisam de downloads.
 <!---
 Seja um dos contribuidores<br>
