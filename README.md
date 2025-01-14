@@ -78,7 +78,7 @@ Envio de E-mail informando que novos itens foram baixados:
 > ![Email_ItemsBaixados](https://github.com/user-attachments/assets/844f5614-1e8f-4688-be7c-e1851c07d90c)
 
 
-Pasta com os arquivos baixados:
+Resultado da pasta com alguns arquivos baixados durante o processo:
 > ![PastaRedeArquivosBaixados](https://github.com/user-attachments/assets/2f7f8b70-3b07-4cea-b528-a2f160617485)
 
 
